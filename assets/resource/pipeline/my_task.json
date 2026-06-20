@@ -1,12 +1,34 @@
 {
-    "MyTask1": {},
-    "MyTask2": {},
-    "MyTask3": {},
-    "MyTask4": {
-        "recognition": "Custom",
-        "custom_recognition": "my_reco_222",
-        "action": "Custom",
-        "custom_action": "my_action_111"
+    "打开抖音": {
+        "recognition": "DirectHit",
+        "action": "StartApp",
+        "package": "com.ss.android.ugc.aweme",
+        "next": [
+            "下滑"
+        ]
     },
-    "OcrTask": {}
+    "下滑": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": [
+            100,
+            800
+        ],
+        "end": [
+            100,
+            200
+        ],
+        "duration": 500,
+        "next": [
+            "wait"
+        ]
+    },
+    "wait": {
+        "recognition": "DirectHit",
+        "action": "Wait",
+        "duration": 20000,
+        "next": [
+            "下滑"
+        ]
+    }
 }
